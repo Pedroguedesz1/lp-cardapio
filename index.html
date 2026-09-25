@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cardápio Metrificado Click</title>
+<meta name="description" content="Seu cardápio pode estar vendendo prejuízo. Teste um prato, veja o CMV na hora e metrifique seu cardápio com a Click por R$ 39,90, pagamento único, 30 dias de acesso.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+:root{
+  --bg:#F2F2F4; --surface:#FFFFFF; --surface2:#F7F7F9;
+  --ink:#10162B; --ink2:#5C6272; --line:#E2E3E9;
+  --accent:#62DD74; --accent-strong:#4FCB62; --accent-ink:#0A1F10; --accent-text:#15833A; --hl-bg:#62DD74;
+  --inv:#111214; --inv2:#1C1E22; --inv3:#26292F; --inv-line:#2C2F35; --inv-ink:#F4F4F6; --inv-ink2:#A3A7B1;
+  --warn:#9A6200; --warn-soft:#FCEFCF;
+  --shadow:0 1px 0 rgba(16,22,43,.04),0 24px 48px -30px rgba(16,22,43,.45);
+  --font:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0B0C0F; --surface:#15171C; --surface2:#1B1E24;
+    --ink:#F2F3F6; --ink2:#9CA1AD; --line:#262930;
+    --accent:#6BE27C; --accent-strong:#86EA94; --accent-ink:#08170C; --accent-text:#6BE27C; --hl-bg:rgba(107,226,124,.38);
+    --inv:#1A1C21; --inv2:#23262C; --inv3:#2C3037; --inv-line:#33363E;
+    --warn:#F0BD4F; --warn-soft:#3A2F15;
+    --shadow:0 1px 0 rgba(0,0,0,.3),0 24px 48px -30px rgba(0,0,0,.9);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0B0C0F; --surface:#15171C; --surface2:#1B1E24;
+  --ink:#F2F3F6; --ink2:#9CA1AD; --line:#262930;
+  --accent:#6BE27C; --accent-strong:#86EA94; --accent-ink:#08170C; --accent-text:#6BE27C; --hl-bg:rgba(107,226,124,.38);
+  --inv:#1A1C21; --inv2:#23262C; --inv3:#2C3037; --inv-line:#33363E;
+  --warn:#F0BD4F; --warn-soft:#3A2F15;
+  --shadow:0 1px 0 rgba(0,0,0,.3),0 24px 48px -30px rgba(0,0,0,.9);
+}
+*{box-sizing:border-box}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;line-height:1.05;letter-spacing:-.035em;font-weight:800;text-wrap:balance}
+p{margin:0}
+
+.page{max-width:1120px;margin-inline:auto;padding-inline:20px;padding-block:14px 32px;display:grid;gap:clamp(28px,4vw,44px)}
+
+.nav{background:var(--inv);border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 18px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--inv-ink);font:800 24px/1 var(--font);letter-spacing:-.04em}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:#fff;display:grid;place-items:center}
+.logo-mark svg{width:20px;height:20px}
+.nav small{color:var(--inv-ink2);font-size:13px;font-weight:600;padding-right:8px}
+
+.hero{display:grid;grid-template-columns:1.1fr .9fr;grid-template-areas:"copy calc" "buy calc";column-gap:clamp(28px,5vw,64px);row-gap:22px;align-items:start}
+.copy{grid-area:copy;display:grid;gap:22px}
+.buy{grid-area:buy}
+.calc{grid-area:calc}
+.pill{display:inline-flex;align-items:center;gap:10px;width:fit-content;padding:5px 16px 5px 5px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:14.5px}
+.pill i{width:30px;height:30px;border-radius:50%;background:#fff;color:#10162B;display:grid;place-items:center}
+h1{font-size:clamp(38px,5.4vw,64px)}
+.hl{font-style:normal;background:linear-gradient(transparent 60%,var(--hl-bg) 60%,var(--hl-bg) 90%,transparent 90%);padding-inline:.05em}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--ink2);max-width:52ch}
+.gets{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.gets li{display:flex;gap:12px;align-items:flex-start;font-weight:600}
+.gets svg{flex:none;width:22px;height:22px;padding:4px;border-radius:50%;background:var(--accent);color:var(--accent-ink);margin-top:1px}
+
+.buy{background:var(--surface);border-radius:24px;padding:18px;box-shadow:var(--shadow),inset 0 0 0 1px var(--line);display:grid;gap:14px;max-width:520px}
+.price-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.price small{display:block;font-size:13px;font-weight:700;color:var(--ink2)}
+.price b{font:800 40px/1.05 var(--font);letter-spacing:-.04em}
+.badge{background:var(--inv);color:var(--accent);font-weight:700;font-size:13px;padding:8px 12px;border-radius:999px;white-space:nowrap}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;text-align:center;text-decoration:none;font:800 17px/1.25 var(--font);padding:19px 22px;border-radius:999px;background:var(--accent);color:var(--accent-ink);transition:background .15s,transform .15s}
+.btn:hover{background:var(--accent-strong);transform:translateY(-1px)}
+.btn:focus-visible,.chip:focus-visible,.calc input:focus-visible{outline:3px solid var(--accent-text);outline-offset:3px}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.nudge{animation:nudge 1.2s ease 1}
+@keyframes nudge{0%,100%{transform:none}30%{transform:scale(1.03)}60%{transform:scale(.99)}}
+.trust{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 14px;font-size:13px;color:var(--ink2)}
+.trust span{display:inline-flex;align-items:center;gap:6px}
+.trust span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.warnbox{font-size:13px;color:var(--warn);background:var(--warn-soft);padding:10px 12px;border-radius:12px}
+
+/* calculadora IA */
+.calc{background:var(--inv);color:var(--inv-ink);border-radius:28px;padding:20px;display:grid;gap:14px;box-shadow:var(--shadow)}
+.pv-head{display:flex;align-items:center;gap:10px}
+.bot{width:38px;height:38px;border-radius:11px;background:var(--accent);color:#08170C;display:grid;place-items:center;flex:none}
+.pv-head b{font-size:15.5px;display:block}
+.pv-head small{font-size:12.5px;color:var(--inv-ink2)}
+.pv-head .ex{margin-left:auto;font-size:11px;font-weight:700;color:var(--inv-ink2);border:1px solid var(--inv-line);padding:4px 9px;border-radius:999px;white-space:nowrap}
+.pv-head .ex.mine{color:#08170C;background:var(--accent);border-color:var(--accent)}
+.inputs{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.fld{display:grid;gap:5px;min-width:0}
+.fld.full{grid-column:1 / -1}
+.fld label,.fld .lbl{font-size:12.5px;font-weight:700;color:var(--inv-ink2)}
+.calc input{font:600 16px/1.2 var(--mono);color:var(--inv-ink);background:var(--inv2);border:1.5px solid var(--inv-line);border-radius:12px;padding:12px 12px;width:100%;min-width:0}
+.calc input#pName{font-family:var(--font)}
+.calc input:focus{border-color:var(--accent)}
+.money{position:relative}
+.money::before{content:"R$";position:absolute;left:12px;top:50%;transform:translateY(-50%);font:600 12.5px/1 var(--mono);color:var(--inv-ink2);pointer-events:none}
+.money input{padding-left:36px}
+.chips{display:flex;gap:6px}
+.chip{appearance:none;border:0;cursor:pointer;flex:1;font:700 14px/1 var(--mono);padding:11px 0;border-radius:999px;background:var(--inv2);color:var(--inv-ink2);box-shadow:inset 0 0 0 1.5px var(--inv-line)}
+.chip[aria-pressed="true"]{background:var(--inv-ink);color:var(--inv);box-shadow:none}
+
+.out{display:grid;gap:10px;min-height:236px;align-content:start}
+.gauge{display:grid;gap:6px}
+.gauge-top{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.gauge-top strong{font:600 30px/1 var(--mono);letter-spacing:-.02em}
+.verdict{font-size:12px;font-weight:700;padding:5px 10px;border-radius:999px}
+.verdict.bad{background:#3A2F15;color:#F0BD4F}
+.verdict.ok{background:#15301C;color:#6BE27C}
+.track{position:relative;margin-top:16px;height:10px;border-radius:99px;background:var(--inv3)}
+.fill{position:absolute;inset:0 auto 0 0;border-radius:inherit;background:#6BE27C;transition:width .5s ease,background .3s}
+.fill.over{background:#F0BD4F}
+.meta-mark{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--inv-ink);border-radius:2px;transition:left .3s}
+.meta-mark span{position:absolute;top:-18px;left:50%;transform:translateX(-50%);font:600 10px/1 var(--mono);color:var(--inv-ink2);white-space:nowrap}
+.scale{display:flex;justify-content:space-between;font:500 10px/1 var(--mono);color:var(--inv-ink2)}
+.msg{background:var(--inv2);border-radius:4px 16px 16px 16px;padding:13px 15px;font-size:14.5px;line-height:1.55;animation:pop .3s ease both}
+.msg b{color:#6BE27C;font-weight:700}
+.result{background:var(--accent);color:#08170C;border-radius:16px;padding:14px 16px;display:grid;gap:2px;animation:pop .3s ease both}
+.result small{font-size:12.5px;font-weight:700}
+.result strong{font:600 26px/1.2 var(--mono);letter-spacing:-.02em}
+.result span{font-size:13px;font-weight:600}
+.typing{display:inline-flex;gap:5px;padding:14px 16px;background:var(--inv2);border-radius:4px 16px 16px 16px;width:fit-content}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--inv-ink2);animation:blink 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+.pv-note{font-size:11.5px;color:var(--inv-ink2);line-height:1.45}
+@keyframes pop{from{opacity:.001;transform:translateY(5px)}to{opacity:1;transform:none}}
+@keyframes blink{0%,100%{opacity:.3}50%{opacity:1}}
+
+footer{font-size:12.5px;color:var(--ink2);text-align:center;line-height:1.5}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;grid-template-areas:"copy" "calc" "buy"}
+  .buy{max-width:none}
+}
+@media (max-width:480px){
+  body{font-size:16px}
+  .nav small{display:none}
+  .price b{font-size:36px}
+}
+</style>
+</head>
+<body>
+
+
+<div class="page">
+  <header class="nav">
+    <span class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#111214" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></span>Click</span>
+    <small>Cardápio Metrificado</small>
+  </header>
+
+  <main class="hero">
+    <div class="copy">
+      <span class="pill"><i><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10.5 13.9 12.4 12 18l-1.9-5.6L4.5 10.5l5.6-1.9z"/></svg></i>Cardápio com IA</span>
+      <h1 id="headline">Seu cardápio pode estar <em class="hl">vendendo prejuízo</em>.</h1>
+      <p class="lead">Prato que vende muito nem sempre deixa dinheiro. Teste agora com um prato seu e veja o que a IA da Click encontra.</p>
+      <ul class="gets">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Custo, CMV e margem de cada prato</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Cardápio digital com link próprio que mede visualizações e pedidos</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>IA que mostra quais pratos ajustar e como</li>
+      </ul>
+    </div>
+
+    <aside class="calc" aria-label="Teste um prato com a IA da Click">
+      <div class="pv-head">
+        <div class="bot"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.2 6.3L20 10l-5.8 1.7L12 18l-2.2-6.3L4 10l5.8-1.7z"/></svg></div>
+        <div><b>Click IA</b><small>Teste com um prato seu</small></div>
+        <span class="ex" id="exFlag">Exemplo</span>
+      </div>
+
+      <div class="inputs">
+        <div class="fld full"><label for="pName">Prato</label><input id="pName" value="X-Tudo" maxlength="40" placeholder="Nome do prato"></div>
+        <div class="fld"><label for="pPrice">Preço de venda</label><div class="money"><input id="pPrice" inputmode="decimal" value="38,00"></div></div>
+        <div class="fld"><label for="pCost">Custo dos ingredientes</label><div class="money"><input id="pCost" inputmode="decimal" value="15,20"></div></div>
+        <div class="fld"><label for="pQty">Vendas no mês</label><input id="pQty" inputmode="numeric" value="220"></div>
+        <div class="fld"><span class="lbl" id="metaLbl">Sua meta de CMV</span>
+          <div class="chips" role="group" aria-labelledby="metaLbl">
+            <button type="button" class="chip" data-meta="30" aria-pressed="false">30%</button>
+            <button type="button" class="chip" data-meta="32" aria-pressed="true">32%</button>
+            <button type="button" class="chip" data-meta="35" aria-pressed="false">35%</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="out" id="out" aria-live="polite"></div>
+      <p class="pv-note">Estimativa feita só com os números digitados, aqui na página. Nada é enviado. No seu acesso, a IA faz essa conta com o cardápio inteiro.</p>
+    </aside>
+
+    <div class="buy">
+      <div class="price-row">
+        <div class="price"><small>30 dias de acesso</small><b id="priceVal">R$ 39,90</b></div>
+        <span class="badge">Pagamento único</span>
+      </div>
+      <a class="btn" id="buyBtn" href="#" target="_blank" rel="noopener">Quero metrificar meu cardápio por R$ 39,90
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <div class="warnbox" id="noLink" hidden>Link de pagamento ainda não configurado. Esta é uma prévia.</div>
+      <div class="trust"><span>Sem assinatura</span><span>Sem renovação automática</span><span>Pagamento seguro</span></div>
+    </div>
+  </main>
+
+  <footer>Click · tecnologia para restaurantes. Os resultados dependem dos dados cadastrados pelo restaurante.</footer>
+</div>
+
+<script>
+/* ============ CONFIGURAÇÃO ============
+   checkoutUrl: link de pagamento único de R$ 39,90 criado no gateway
+   headlines:   variações para teste A/B, escolhidas por ?h=1 a ?h=3 na URL do anúncio
+*/
+var CONFIG = {
+  checkoutUrl: "",
+  price: "R$ 39,90"
+};
+var HEADLINES = [
+  'Seu cardápio pode estar <em class="hl">vendendo prejuízo</em>.',
+  'Você sabe quanto <em class="hl">realmente sobra</em> em cada prato que vende?',
+  'Quanto dinheiro seu restaurante está <em class="hl">deixando na mesa</em>?'
+];
+
+(function(){
+  function track(ev, data){ try{ window.dataLayer = window.dataLayer || []; window.dataLayer.push(Object.assign({event:ev}, data||{})); }catch(e){} }
+  var $ = function(id){ return document.getElementById(id); };
+  var params; try{ params = new URLSearchParams(location.search); }catch(e){ params = null; }
+
+  /* headline A/B */
+  var h = 1;
+  try{ var n = parseInt((params && params.get('h')) || (location.hash.match(/^#h(\d)$/)||[])[1], 10); if(n >= 1 && n <= HEADLINES.length) h = n; }catch(e){}
+  $('headline').innerHTML = HEADLINES[h-1];
+  track('headline_view', {headline:'H'+h});
+
+  /* checkout */
+  var btn = $('buyBtn');
+  if(CONFIG.checkoutUrl){
+    try{
+      var u = new URL(CONFIG.checkoutUrl);
+      if(params){ ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid'].forEach(function(k){ if(params.get(k)) u.searchParams.set(k, params.get(k)); }); }
+      u.searchParams.set('lp_headline', 'H'+h);
+      btn.href = u.toString();
+    }catch(e){ btn.href = CONFIG.checkoutUrl; }
+  }
+  btn.addEventListener('click', function(e){
+    track('checkout_click', {headline:'H'+h, usou_calculadora: used});
+    if(!CONFIG.checkoutUrl){ e.preventDefault(); $('noLink').hidden = false; }
+  });
+
+  /* ============ CALCULADORA IA ============ */
+  var brl = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL'});
+  var brl0 = new Intl.NumberFormat('pt-BR',{style:'currency',currency:'BRL',maximumFractionDigits:0});
+  function pct(v){ return (v*100).toLocaleString('pt-BR',{maximumFractionDigits:1}) + '%'; }
+  function num(s){ s = String(s||'').replace(/[^\d,.]/g,''); if(s.indexOf(',')>-1) s = s.replace(/\./g,'').replace(',','.'); var v = parseFloat(s); return isNaN(v) ? 0 : v; }
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+
+  var meta = 0.32, used = false, timer = null, out = $('out');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function build(){
+    var name = ($('pName').value || '').trim() || 'Esse prato';
+    var p = num($('pPrice').value), c = num($('pCost').value), q = Math.round(num($('pQty').value));
+    if(p <= 0) return '<div class="msg">Digite o preço de venda do prato para eu calcular.</div>';
+    if(c <= 0) return '<div class="msg">Agora o custo dos ingredientes: pão, carne, queijo, embalagem, tudo o que vai no prato.</div>';
+    var cmv = c / p, over = cmv > meta + 1e-9, w = Math.min(cmv, 1) * 100;
+    var html =
+      '<div class="gauge"><div class="gauge-top"><strong>'+pct(cmv)+'</strong><span class="verdict '+(over?'bad':'ok')+'">'+(over?'Acima da meta':'Dentro da meta')+'</span></div>'+
+      '<div class="track"><div class="fill'+(over?' over':'')+'" style="width:'+w+'%"></div><div class="meta-mark" style="left:'+(meta*100)+'%"><span>meta '+Math.round(meta*100)+'%</span></div></div>'+
+      '<div class="scale"><span>0%</span><span>CMV do prato</span><span>100%</span></div></div>';
+
+    if(c >= p){
+      html += '<div class="msg">O custo dos ingredientes de <b>'+esc(name)+'</b> é igual ou maior que o preço. Cada unidade vendida já sai no prejuízo, antes de pagar qualquer outra conta.</div>';
+      return html;
+    }
+    if(over){
+      var exU = c - p*meta, ideal = c/meta, maxC = p*meta;
+      html += '<div class="msg"><b>'+esc(name)+'</b> gasta <b>'+brl.format(exU)+'</b> a mais em ingrediente, por unidade, do que a sua meta permite. Para voltar à meta: vender a <b>'+brl.format(ideal)+'</b> ou baixar a ficha técnica para <b>'+brl.format(maxC)+'</b>.</div>';
+      if(q > 0) html += '<div class="result"><small>Acima da meta, só nesse prato</small><strong>'+brl.format(exU*q)+'/mês</strong><span>'+brl0.format(exU*q*12)+' em 12 meses, se nada mudar</span></div>';
+    } else {
+      var sobra = p - c;
+      html += '<div class="msg"><b>'+esc(name)+'</b> está dentro da meta. Sobram <b>'+brl.format(sobra)+'</b> por unidade depois dos ingredientes. É um bom prato para destacar no cardápio.</div>';
+      if(q > 0) html += '<div class="result"><small>Sobra depois dos ingredientes</small><strong>'+brl.format(sobra*q)+'/mês</strong><span>E os outros pratos do cardápio? É isso que o seu acesso mostra.</span></div>';
+    }
+    return html;
+  }
+
+  function render(animate){
+    clearTimeout(timer);
+    if(!animate || reduce){ out.innerHTML = build(); return; }
+    out.innerHTML = '<div class="typing" aria-label="Calculando"><i></i><i></i><i></i></div>';
+    timer = setTimeout(function(){ out.innerHTML = build(); }, 550);
+  }
+
+  function markUsed(){
+    if(!used){
+      used = true; track('calc_used');
+      var f = $('exFlag'); f.textContent = 'Seu prato'; f.classList.add('mine');
+      setTimeout(function(){ btn.classList.add('nudge'); }, 1600);
+    }
+  }
+  ['pName','pPrice','pCost','pQty'].forEach(function(id){
+    $(id).addEventListener('input', function(){ markUsed(); render(true); });
+  });
+  document.querySelectorAll('[data-meta]').forEach(function(b){
+    b.addEventListener('click', function(){
+      meta = +b.getAttribute('data-meta') / 100;
+      document.querySelectorAll('[data-meta]').forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      markUsed(); render(true);
+    });
+  });
+  render(false);
+})();
+</script>
+
+</body>
+</html>
